@@ -42,9 +42,7 @@ export default function App() {
           ]
         })
         .then(device => {
-          /*addText('> Name:             ' + device.name);
-          addText('> Id:               ' + device.id);
-          addText('> Connected:        ' + device.gatt.connected);*/
+          console.log(device);
           addText(
             'Name:' +
               device.name +
