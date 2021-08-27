@@ -67,7 +67,7 @@ export default function App() {
   return (
     <div>
       <h1>Prueba lista de dispositivos para la Srta Milagros</h1>
-      <button onClick={requestDevice}>Holi!, ver dispositivos BT</button>
+      <button onClick={requestDevice}>Holi!!!!, ver dispositivos BT</button>
       <div>{message}</div>
     </div>
   );
