@@ -1,14 +1,20 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './style.css';
 
 export default function App() {
+  const [message, setMessage] = useState('');
+
   const onDisconnected = event => {
     alert(`The device ${event.target} is disconnected`);
     setIsDisconnected(true);
   };
 
+  const addText = text => {
+    setMessage(message + '\n' + text);
+  };
+
   async function requestDevice() {
-    console.log('printing...');
+    addText('printing...');
     try {
       /*const bluetoothDevice = await navigator.bluetooth.requestDevice({
         // filters: [ { name: 'Device test' } ],
@@ -36,10 +42,10 @@ export default function App() {
           ]
         })
         .then(device => {
-          console.log('> Name:             ' + device.name);
-          console.log('> Id:               ' + device.id);
-          console.log('> Connected:        ' + device.gatt.connected);
-          alert(
+          /*addText('> Name:             ' + device.name);
+          addText('> Id:               ' + device.id);
+          addText('> Connected:        ' + device.gatt.connected);*/
+          addText(
             'Name:' +
               device.name +
               ' - Id:' +
@@ -49,11 +55,11 @@ export default function App() {
           );
         })
         .catch(error => {
-          console.log('Argh! ' + error);
+          addText('Argh! ' + error);
         });
     } catch (error) {
       console.error(error);
-      alert(error);
+      addText(error);
     }
   }
 
@@ -61,6 +67,7 @@ export default function App() {
     <div>
       <h1>Prueba lista de dispositivos para la Srta Milagros</h1>
       <button onClick={requestDevice}>Holi!, ver dispositivos BT</button>
+      <div>{message}</div>
     </div>
   );
 }
