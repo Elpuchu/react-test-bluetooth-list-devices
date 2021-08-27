@@ -42,6 +42,9 @@ export default function App() {
           ]
         })
         .then(device => {
+          console.log('> Name:             ' + device.name);
+          console.log('> Id:               ' + device.id);
+          console.log('> Connected:        ' + device.gatt.connected);
           console.log(device);
           addText(
             'Name:' +
@@ -64,7 +67,7 @@ export default function App() {
   return (
     <div>
       <h1>Prueba lista de dispositivos para la Srta Milagros</h1>
-      <button onClick={requestDevice}>Holi!!!, ver dispositivos BT</button>
+      <button onClick={requestDevice}>Holi!, ver dispositivos BT</button>
       <div>{message}</div>
     </div>
   );
