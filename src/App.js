@@ -32,7 +32,7 @@ export default function App() {
   return (
     <div>
       <h1>Prueba lista de dispositivos para la Srta Milagros</h1>
-      <button onClick={print}>Ver dispositivo BT</button>
+      <button onClick={print}>Holi!, ver dispositivos BT</button>
     </div>
   );
 }
